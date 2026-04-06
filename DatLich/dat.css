@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #374151;
+  font-family: "inter", sans-serif;
+}
+.container {
+  font-family: "inter", sans-serif;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f2937;
+  color: #ffffff;
+  height: 52px;
+  padding: 0 20px;
+}
+.title {
+  font-weight: bold;
+}
+.list-link {
+  display: flex;
+  gap: 16px;
+}
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.content {
+  padding: 30px;
+  margin-right: 80px;
+  margin-left: 80px;
+  background-color: #fff;
+}
+.titlecontent {
+  padding-bottom: 30px;
+}
+.headcontent {
+  display: flex;
+  justify-content: space-between;
+}
+.btncontent {
+  background-color: #3b82f6;
+  width: 147.22000122070312px;
+  height: 40px;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+}
+.btncontent:hover{
+  cursor: pointer;
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  width: 350px;
+  border-radius: 8px;
+  display: none;
+  z-index: 1000;
+}
+tr {
+  border-collapse: collapse;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+table {
+  max-width: 1428px;
+  width: 100%;
+  height: 49px;
+  border: none;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+td {
+  padding: 10px 20px;
+}
+thead {
+  background-color: #e5e7eb;
+  border-collapse: collapse;
+  border: 1px solid #e5e7eb;
+  font-weight: 700;
+}
+.btncan {
+  background-color: #9ca3af;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.btnad {
+  background-color: #3b82f6;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: white;
+}
+.choose {
+  height: 50px;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f3f4f6;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s all;
+}
+
+.form-control:focus {
+  background-color: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+select.form-control {
+  /* appearance: none; ẩn hiện nút dưới*/
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' viewBox='0 0 20 20'><path d='M5 7l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btncan {
+  background-color: #6b7280;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+.btncan:hover{
+    cursor: pointer;
+}
+.btnad {
+  background-color: #3b82f6;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+.form-control {
+  padding: 12px;
+}
+.btnupdate {
+  background-color: #fff;
+  color: #3b82f6;
+  border: none;
+}
+.btnupdate:hover {
+  cursor: pointer;
+}
+.delete-popup {
+  width: 350px;
+  text-align: center;
+}
+
+.delete-popup p {
+  margin: 16px 0 24px;
+  color: #555;
+}
+
+.btndelete {
+  background-color: #fff;
+  color: red;
+  border: none;
+  margin-left: 5px;
+}
+
+.btndelete:hover {
+  cursor:pointer;
+}
+.footer {
+   max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  height: 325px;
+  background-color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 500px;
+}
+.depfot {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  justify-content: space-between;
+  align-items: center;
+  width: 1280px;
+  padding-left: 72px;
+  margin-left: 72px;
+  padding-top: 48px;
+}
+.dep1 {
+  width: 394.6600036621094px;
+  height: 140px;
+}
+.dep2 {
+  width: 394.6600036621094px;
+  height: 140px;
+}
+.dep3 {
+  width: 394.6600036621094px;
+  height: 140px;
+}
+.end {
+  color: #9ca3af;
+  border-top: 1px solid #374151;
+  text-align: center;
+  padding-top: 50px;
+}
+.ti {
+  color: #ffffff;
+  font-size: 23.9px;
+  font-weight: 700;
+}
+.de {
+  color: #9ca3af;
+}
+.delete-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 350px;
+  text-align: center;
+  z-index: 1000;
+
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.btndel{
+    background-color: red;
+    border: none;
+    width: 55px;
+    border-radius: 6px;
+}
+.btndel:hover{
+    cursor: pointer;
+}
+.popdep{
+    font-size: 30px;
+    color: red;
+}
+.popup-del{
+    display: flex;
+    padding: 60px;
+}
+.dep3 a{
+  color: #9CA3AF;
+}

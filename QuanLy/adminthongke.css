@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f3f4f6;
+}
+
+/* Layout */
+.container {
+  display: flex;
+}
+
+.nav-bar {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.nav-bar h2 {
+  color: #fff;
+  padding: 0 16px 30px; 
+}
+
+.nav-bar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 12px;  
+  margin: 0 16px;       
+  border-radius: 6px;  
+  transition: 0.2s;
+}
+
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Title */
+.title {
+  margin-bottom: 20px;
+}
+
+/* ===== Stats ===== */
+.listschedule {
+  display: flex;
+  gap: 20px;
+}
+
+.schedulegym,
+.scheduleyoga,
+.schedulezumba {
+  flex: 1;
+  background-color: #fff;
+  height: 120px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.schedulegym h3,
+.scheduleyoga h3,
+.schedulezumba h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* ===== Chart ===== */
+.dashboard {
+  width: 100%;
+  height: 300px;
+  background-color: #fff;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* ===== Filter ===== */
+.filter {
+  background-color: #fff;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.filter h2 {
+  margin-bottom: 10px;
+}
+
+.listfilter {
+  display: flex;
+  gap: 20px;
+}
+
+.listfilter div {
+  flex: 1;
+}
+
+label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+/* ===== Table ===== */
+.table {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #e5e7eb;
+}
+
+thead td {
+  font-weight: 600;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Button */
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.delete {
+  background-color: #ef4444;
+  color: #fff;
+}
+/* FIX lệch sidebar */
+.nav-bar h2 {
+  padding: 0 16px 30px; /* giống nav-bar-col */
+}
+
+.nav-bar a {
+  padding: 10px 12px; /* giống bên kia */
+}
+
+/* thêm khoảng cách giống list-link */
+.nav-bar a + a {
+  margin-top: 10px;
+}

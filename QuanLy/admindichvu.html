@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./admindichvu.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./admindichvu.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav-bar-col">
+        <h2>Admin Dashboard</h2>
+        <div class="list-link">
+          <a href="./adminthongke.html">Quản lý lịch</a>
+          <a href="./admindichvu.html">Quản lí dịch vụ</a>
+          <a href="../Trangchu/home.html">Trang chủ</a>
+          <a href="../login/login.html">Đăng xuất</a>
+        </div>
+      </div>
+      <div class="header">
+        <div class="box1">
+          <h2>Quản lý dịch vụ</h2>
+          <button id="openAddBtn">Thêm dịch vụ mới</button>
+        </div>
+        <div class="main">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tên dịch vụ</th>
+                  <th>Mô tả</th>
+                  <th>Hình ảnh</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="serviceList"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="modal" id="modal">
+          <div class="modal-content">
+            <h3 id="modalTitle">Thêm dịch vụ</h3>
+
+            <input type="text" id="name" placeholder="Tên dịch vụ" />
+            <span class="error" id="nameErr"></span>
+
+            <input type="text" id="desc" placeholder="Mô tả" />
+            <span class="error" id="descErr"></span>
+
+            <input type="text" id="img" placeholder="Link ảnh" />
+            <span class="error" id="imgErr"></span>
+
+            <div class="modal-action">
+              <button id="saveBtn">Lưu</button>
+              <button id="cancelBtn">Huỷ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./admindichvu.js"></script>
+  </body>
+</html>

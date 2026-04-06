@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./dat.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">GYM MANAGEMENT</h1>
+        <nav class="list-link">
+          <a href="../Trangchu/home.html">Trang chủ</a>
+          <a href="../DatLich/Dat.html">Lịch tập</a>
+        </nav>
+      </header>
+      <div class="content">
+        <div class="headcontent">
+          <h1 class="titlecontent">Quản lý lịch tập</h1>
+          <button class="btncontent" id="btnadd">Đặt lịch mới</button>
+        </div>
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <td>Lớp học</td>
+              <td>Ngày tập</td>
+              <td>Khung giờ</td>
+              <td>Họ tên</td>
+              <td>Email</td>
+              <td>Thao tác</td>
+            </tr>
+          </thead>
+          <tbody class="tbody" id="tbody"></tbody>
+        </table>
+    </div>
+    <div class="overlay" id="overlay">
+      <div class="popup" id="pop">
+        <h3 id="modalTitle" >Đặt lịch mới</h3>
+
+        <div class="form-group">
+          <label>Lớp học</label>
+          <select id="classInput" class="form-control">
+            <option value="">Chọn lớp học</option>
+            <option value="Gym">Gym</option>
+            <option value="Yoga">Yoga</option>
+            <option value="Zumba">Zumba</option>
+          </select>
+          <small class="validate" id="valid-class" style="color: red;"></small><br/>
+        </div>
+
+        <div class="form-group">
+          <label>Ngày tập</label>
+          <input type="date" id="dateInput" class="form-control" />
+          <small class="validate" id="valid-date" style="color: red;"></small><br/>
+        </div>
+
+        <div class="form-group">
+          <label>Khung giờ</label>
+          <select id="timeInput" class="form-control">
+            <option value="">Chọn khung giờ</option>
+            <option value="07:00 - 09:00">07:00 - 09:00</option>
+            <option value="09:00 - 11:00">09:00 - 11:00</option>
+            <option value="13:00 - 15:00">13:00 - 15:00</option>
+            <option value="15:00 - 17:00">15:00 - 17:00</option>
+          </select>
+          <small class="validate" id="valid-time" style="color: red;"></small><br/>
+        </div>
+
+        <div class="popup-actions">
+          <button class="btncan" id="btncan">Hủy</button>
+          <button class="btnad" id="btnsave">Lưu</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup delete-popup" id="modalDelete">
+      <h3>Xác nhận xóa</h3>
+      <p>Bạn có chắc chắn muốn xóa lịch này không?</p>
+
+      <div class="popup-actions">
+        <button id="btncancelDelete" class="btncan">Hủy</button>
+        <button id="btnconfirmDelete" class="btndel">Xóa</button>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div class="depfot">
+        <div class="dep1">
+          <h2 class="ti">Về chúng tôi</h2>
+          <p class="de">
+            Gym Management - Nơi bạn bắt đầu hành trình fitness của mình với các
+            trang thiết bị hiện đại và đội ngũ huấn luyện viên chuyên nghiệp.
+          </p>
+        </div>
+        <div class="dep2">
+          <h2 class="ti">Liên hệ</h2>
+          <p class="de">
+            Email: contact@gym.com Phone: (123) 456-7890 Địa chỉ: 123 Đường ABC,
+            Quận XYZ
+          </p>
+        </div>
+        <div class="dep3">
+          <h2 class="ti">Theo dõi chúng tôi</h2>
+          <div class="listap">
+            <a class="item" href="">Facebook</a>
+            <a class="item" href="">Instagram</a>
+            <a class="item" href="">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div><p class="end">© 2024 Gym Management. All rights reserved.</p></div>
+    </div>
+    <div class="popup delete-popup" id="modalDelete">
+      <h3>Xác nhận xóa</h3>
+      <p class="popdep">Bạn có chắc chắn muốn xóa lịch này không?</p>
+      <div class="popup-del">
+        <button id="btncancelDelete" class="btncan">Hủy</button>
+        <button id="btnconfirmDelete" class="btndel">Xóa</button>
+      </div>
+    </div>
+    <script src="./dat.js"></script>
+  </body>
+</html>

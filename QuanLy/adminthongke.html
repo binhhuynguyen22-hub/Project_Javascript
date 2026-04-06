@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./adminthongke.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav-bar">
+        <h2>Admin Dashboard</h2>
+        <a href="./adminthongke.html">Quản lý lịch</a>
+        <a href="./admindichvu.html">Quản lí dịch vụ</a>
+        <a href="../Trangchu/home.html">Trang chủ</a>
+        <a href="../login/login.html">Đăng xuất</a>
+      </div>
+      <div class="main">
+        <h2 class="title">Thống kê lịch tập</h2>
+        <div class="listschedule">
+          <div class="schedulegym">
+            <h3>Tổng số lịch Gym</h3>
+          </div>
+          <div class="scheduleyoga">
+            <h3>Tổng số lịch Yoga</h3>
+          </div>
+          <div class="schedulezumba">
+            <h3>Tổng số lịch Zumba</h3>
+          </div>
+        </div>
+        <div class="dashboard">Day la bieu do</div>
+        <div class="filter">
+          <h2>Bộ lọc</h2>
+          <div class="listfilter">
+            <div>
+              <label for="">Lớp học</label><br />
+              <select name="" id="">
+                <option value="">Tất cả</option>
+                <option value="Gym">Gym</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Zumba">Zumba</option>
+              </select>
+            </div>
+            <div>
+              <label for="">Email</label><br />
+              <input type="email" />
+            </div>
+            <div>
+              <label for="">Ngày</label><br />
+              <input type="date" />
+            </div>
+          </div>
+        </div>
+        <div class="table">
+          <table cellspacing="0">
+            <thead>
+              <tr>
+                <td>Lớp học</td>
+                <td>Ngày tập</td>
+                <td>Khung giờ</td>
+                <td>Họ tên</td>
+                <td>Email</td>
+                <td>Thao tác</td>
+              </tr>
+            </thead>
+            <tbody class="tbody" id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

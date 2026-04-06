@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #2f2f2f;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.nav-bar-col {
+  width: 250px;
+  background: linear-gradient(180deg, #1f2937, #111827);
+  color: #f3f4f6;
+  padding-top: 20px;
+}
+
+.nav-bar-col h2 {
+  padding: 0 16px 30px;
+}
+
+/* Menu */
+.list-link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 16px;
+}
+
+.list-link a {
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+.header {
+  flex: 1;
+  background-color: #f3f4f6;
+  padding: 20px;
+}
+.table-container{
+    font-weight: 600;
+    font-size: 18.9px;
+}
+/* Top bar */
+.box1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.box1 h2 {
+  font-size: 28.7px;
+  font-weight: 700;
+}
+
+/* Button */
+.box1 button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.box1 button:hover {
+  background-color: #2563eb;
+}
+
+/* Table Card */
+.main {
+  background: #f9fafb;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #e5e7eb;
+}
+
+th, td {
+  padding: 14px 16px;
+  text-align: left;
+}
+
+th {
+  font-weight: 600;
+  color: #374151;
+}
+
+td {
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Hover */
+tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* Image */
+td img {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Buttons */
+.edit-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  margin-right: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 8px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+}
+
+.modal-action {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+.modal.active {
+  display: flex;
+}
