@@ -1,4 +1,3 @@
-// DOM
 const tbody = document.getElementById("tbody");
 const overlay = document.getElementById("overlay");
 const popupForm = document.getElementById("popupForm");
@@ -19,8 +18,6 @@ const btnCancelDelete = document.getElementById("btnCancelDelete");
 let schedule = JSON.parse(localStorage.getItem("schedule")) || [];
 let editingIndex = null;
 let deletingIndex = null;
-
-// Render bảng
 const renderTable = (data = schedule) => {
   tbody.innerHTML = "";
   data.forEach((item, index) => {
@@ -40,7 +37,6 @@ const renderTable = (data = schedule) => {
   });
 };
 
-// Mở popup Thêm/Sửa
 const openAdd = () => {
   editingIndex = null;
   popupForm.querySelector("#modalTitle").innerText = "Thêm lịch";
@@ -146,7 +142,6 @@ btnCancelDelete.onclick = () => {
   popupDelete.style.display = "none";
 };
 
-// Render lần đầu
 renderTable();
 const totalGym = document.querySelector(".schedulegym h3");
 const totalYoga = document.querySelector(".scheduleyoga h3");

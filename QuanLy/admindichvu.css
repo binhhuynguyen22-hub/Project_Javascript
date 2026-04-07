@@ -9,13 +9,11 @@ body {
   background-color: #2f2f2f;
 }
 
-/* Layout */
 .container {
   display: flex;
   height: 100vh;
 }
 
-/* Sidebar */
 .nav-bar-col {
   width: 250px;
   background: linear-gradient(180deg, #1f2937, #111827);
@@ -27,7 +25,6 @@ body {
   padding: 0 16px 30px;
 }
 
-/* Menu */
 .list-link {
   display: flex;
   flex-direction: column;
@@ -42,16 +39,18 @@ body {
   border-radius: 6px;
   transition: 0.2s;
 }
+
 .header {
   flex: 1;
   background-color: #f3f4f6;
   padding: 20px;
 }
+
 .table-container {
   font-weight: 600;
   font-size: 18.9px;
 }
-/* Top bar */
+
 .box1 {
   display: flex;
   justify-content: space-between;
@@ -64,7 +63,6 @@ body {
   font-weight: 700;
 }
 
-/* Button */
 .box1 button {
   background-color: #3b82f6;
   color: white;
@@ -78,7 +76,6 @@ body {
   background-color: #2563eb;
 }
 
-/* Table Card */
 .main {
   background: #f9fafb;
   border-radius: 10px;
@@ -110,12 +107,6 @@ td {
   border-top: 1px solid #e5e7eb;
 }
 
-/* Hover */
-/* tbody tr:hover {
-  background-color: #f3f4f6;
-} */
-
-/* Image */
 td img {
   width: 80px;
   height: 50px;
@@ -123,7 +114,6 @@ td img {
   border-radius: 6px;
 }
 
-/* Buttons */
 .edit-btn {
   background: #3b82f6;
   color: white;
@@ -143,7 +133,6 @@ td img {
   cursor: pointer;
 }
 
-/* Modal nền */
 .modal {
   display: none;
   position: fixed;
@@ -158,7 +147,6 @@ td img {
   padding-top: 250px;
 }
 
-/* Box popup */
 .modal-content {
   background: #f3f3f3;
   padding: 24px;
@@ -173,7 +161,6 @@ td img {
   transform: translateX(-50%);
 }
 
-/* Input + textarea */
 .modal-content input {
   padding: 10px;
   border-radius: 6px;
@@ -181,7 +168,6 @@ td img {
   width: 100%;
 }
 
-/* Buttons */
 .modal-action {
   display: flex;
   justify-content: flex-end;
@@ -189,7 +175,6 @@ td img {
   margin-top: 10px;
 }
 
-/* Button style */
 #cancelBtn {
   background: #6b7280;
   color: white;
@@ -199,6 +184,7 @@ td img {
   background: #3b82f6;
   color: white;
 }
+
 .modal-content textarea {
   padding: 10px;
   border-radius: 6px;
@@ -206,35 +192,42 @@ td img {
   width: 100%;
   height: 50px;
 }
-.listButton{
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
+
+.listButton {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
 }
-.canBtn{
-    width: 80px;
-    height: 45px;
-    border: none;
-    border-radius: 8px;
-    background-color: #6d727f;
-    color: #fff;
+
+.canBtn {
+  width: 80px;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  background-color: #6d727f;
+  color: #fff;
 }
-.saveBtn{
-    width: 80px;
-    height: 45px;
-    border: none;
-    border-radius: 8px;
-    background-color: #5b84ee;
-    color: #fff;
+
+.saveBtn {
+  width: 80px;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  background-color: #5b84ee;
+  color: #fff;
 }
-.text{
-    height: 120px;
+
+.text {
+  height: 120px;
 }
+
 #deleteModal .modal-content {
   width: 300px;
   padding: 16px;
   border-radius: 10px;
   gap: 10px;
+  height: auto;
+  min-height: unset;
 }
 
 #deleteModal h3 {
@@ -243,12 +236,13 @@ td img {
 
 #deleteModal p {
   font-size: 14px;
-  margin: 8px 0 16px;
+  margin: 6px 0 12px;
 }
 
 #deleteModal .listButton {
   justify-content: center;
   gap: 12px;
+  margin-top: 5px;
 }
 
 #deleteModal .canBtn,
@@ -257,22 +251,7 @@ td img {
   height: 35px;
   font-size: 13px;
 }
-#deleteModal .modal-content {
-  width: 300px;
-  padding: 16px;
-  border-radius: 10px;
 
-  height: auto;        /* 🔥 QUAN TRỌNG */
-  min-height: unset;   /* nếu có */
-}
-
-#deleteModal p {
-  margin: 6px 0 12px;
-}
-
-#deleteModal .listButton {
-  margin-top: 5px;
-}
 .edit-text {
   color: #2563eb;
   cursor: pointer;

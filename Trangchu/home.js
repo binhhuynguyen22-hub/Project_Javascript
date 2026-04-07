@@ -60,7 +60,6 @@ if (currentUser) {
   quanli.style.display = "none"; 
 }
 
-//render
 const saveListClass = () =>{
   localStorage.setItem("listData", JSON.stringify(listData));
 }
