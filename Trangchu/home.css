@@ -35,7 +35,11 @@ a {
   color: #ffffff;
   text-decoration: none;
 }
-
+#list-class{
+  display: flex;
+  flex-wrap: wrap;
+  width: 1440px;
+}
 .first {
   background-image: url("./Gemini_Generated_Image_66gp0266gp0266gp.png");
   background-size: cover;

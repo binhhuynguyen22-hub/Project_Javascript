@@ -44,25 +44,41 @@
             </table>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="modal" id="modal" style="display: none">
+      <div class="modal-content">
+        <h3>Thêm dịch vụ mới</h3>
+        <div class="inputName">
+          <label>Tên dịch vụ</label>
+          <input type="text" id="inputname" />
+          <p id="validName" style="color: red; font-size: 12px"></p>
+        </div>
 
-        <div class="modal" id="modal">
-          <div class="modal-content">
-            <h3 id="modalTitle">Thêm dịch vụ</h3>
+        <div class="inputDes">
+          <label>Mô tả</label>
+          <textarea id="inputdes" class="text"></textarea>
+          <p id="validDes" style="color: red; font-size: 12px"></p>
+        </div>
 
-            <input type="text" id="name" placeholder="Tên dịch vụ" />
-            <span class="error" id="nameErr"></span>
-
-            <input type="text" id="desc" placeholder="Mô tả" />
-            <span class="error" id="descErr"></span>
-
-            <input type="text" id="img" placeholder="Link ảnh" />
-            <span class="error" id="imgErr"></span>
-
-            <div class="modal-action">
-              <button id="saveBtn">Lưu</button>
-              <button id="cancelBtn">Huỷ</button>
-            </div>
-          </div>
+        <div class="inputImg">
+          <label>URL Hình ảnh</label>
+          <input type="url" id="inputimg" />
+          <p id="validImg" style="color: red; font-size: 12px"></p>
+        </div>
+        <div class="listButton">
+          <button class="canBtn" id="cancelBtn">Hủy</button>
+          <button class="saveBtn" id="saveBtn">Lưu</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="deleteModal" style="display: none">
+      <div class="modal-content">
+        <h3>Xác nhận xóa</h3>
+        <p>Bạn có chắc muốn xóa dịch vụ này?</p>
+        <div class="listButton">
+          <button class="canBtn" id="cancelDelete">Hủy</button>
+          <button class="saveBtn" id="confirmDelete">Xóa</button>
         </div>
       </div>
     </div>

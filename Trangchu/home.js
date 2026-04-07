@@ -1,13 +1,7 @@
-let listClass=[
-    {id: 1, name: "Gym", description:"Tập luyện với các thiết bị hiện đại", image:"../img/Image [w-full].png" },
-    {id: 2, name: "Yoga", description:"Thư giãn và cân bằng tâm trí", image:"../img/yoga.png" },
-    {id: 3, name: "Zumba", description:"Đốt cháy calories với những điệu nhảy sôi động", image:"../img/zumba.png" },
-]
-let listSchedules=[
-    {id: `${Date.now()}`, userId:`Id2`, classId:1, date:`2026-04-01`, time:`7:00-9:00`, status:"pending", createdAt:"01/04/2026", updatedAt:"01/04/2026"},
-    {id: `${Date.now()+1}`, userId:`Id1`, classId:1, date:`2026-04-01`, time:`7:00-9:00`, status:"pending", createdAt:"01/04/2026", updatedAt:"01/04/2026"},
-    {id: `${Date.now()+2}`, userId:`Id2`, classId:3, date:`2026-04-01`, time:`7:00-9:00`, status:"pending", createdAt:"01/04/2026", updatedAt:"01/04/2026"},
-    {id: `${Date.now()+3}`, userId:`Id1`, classId:1, date:`2026-04-01`, time:`7:00-9:00`, status:"pending", createdAt:"01/04/2026", updatedAt:"01/04/2026"},
+let listData = [
+  {id: 1, img:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTxCrU9lz8HbpcdoAs7wh8hIMHlJBPkVcqG5iBIsNw9NTeIn1kN", name :"Gym", dep:"Tập luyện với thiết bị hiện đại"},
+  {id: 2, img:"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRvtZOaqAl_xZR09727KWEkuBQIGxzl49HuYj30eaObfHaRGEtp", name :"Yoga", dep:"Thư giãn và cân bằng tâm trí"},
+  {id: 3, img:"https://img.freepik.com/free-psd/zumba-lifestyle-banner-template_23-2149193901.jpg?semt=ais_incoming&w=740&q=80", name :"Zumba", dep:"Đốt cháy calories với những giai điệu nhảy sôi động"},
 ];
 let btnlogin = document.getElementById("btnlogin");
 let btnlogout = document.getElementById("btnlogout");
@@ -65,3 +59,39 @@ if (currentUser) {
   btnlogout.style.display = "none";
   quanli.style.display = "none"; 
 }
+
+//render
+const saveListClass = () =>{
+  localStorage.setItem("listData", JSON.stringify(listData));
+}
+const getDataSe = () =>{
+  let data = localStorage.getItem("services");
+
+  if(data){
+    listData = JSON.parse(data);
+  }
+}
+let listClass = document.getElementById("list-class");
+const renderData = () =>{
+  getDataSe();
+  listClass.innerHTML ="";
+
+  listData.forEach((item) =>{
+    let div = document.createElement("div");
+    div.innerHTML=`
+      <div class="list1">
+          <img src="${item.img}" alt="" class="img1" />
+          <div class="lio">
+            <h2 class="gy">${item.name}</h2>
+            <p>${item.dep}</p>
+            <a href="" class="btnac">Đặt lịch</a>
+          </div>
+        </div>
+    
+    `
+    listClass.appendChild(div);
+    
+  });
+  saveListClass();
+}
+renderData();

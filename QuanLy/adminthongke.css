@@ -149,11 +149,6 @@ td {
   border-bottom: 1px solid #eee;
 }
 
-tbody tr:hover {
-  background-color: #f9fafb;
-}
-
-/* Button */
 button {
   padding: 5px 10px;
   border: none;
@@ -182,4 +177,85 @@ button {
 /* thêm khoảng cách giống list-link */
 .nav-bar a + a {
   margin-top: 10px;
+}
+/* Overlay chung */
+.overlay {
+  display: none; /* Ẩn mặc định */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 99;
+}
+
+/* Popup form thêm/sửa */
+.popup {
+  display: none; /* Ẩn mặc định */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.popup h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.popup .form-group {
+  margin-bottom: 15px;
+}
+
+.popup .form-control {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+.popup .popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.popup .btnad {
+  background-color: #3b82f6;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.popup .btncan {
+  background-color: #6b7280;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.delete-popup p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.popup .btndel{
+    background-color: red;
+}
+.btnedit{
+    background-color: #fff;
+    color: blue;
+}
+.btndelete{
+    background-color: #fff;
+    color: red;
 }

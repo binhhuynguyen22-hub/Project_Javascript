@@ -1,196 +1,193 @@
-// ===== DATA MẶC ĐỊNH =====
-const DEFAULT_SERVICES = [
+let services = [
   {
     id: 1,
+    img: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTxCrU9lz8HbpcdoAs7wh8hIMHlJBPkVcqG5iBIsNw9NTeIn1kN",
     name: "Gym",
-    description: "Phòng tập gym hiện đại",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-5NXcpNjrMz5uEtOtpHnuZHeAV_TFGt_vNA&s",
+    dep: "Tập luyện với thiết bị hiện đại",
   },
   {
     id: 2,
+    img: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRvtZOaqAl_xZR09727KWEkuBQIGxzl49HuYj30eaObfHaRGEtp",
     name: "Yoga",
-    description: "Lớp yoga thư giãn",
-    image: "https://placehold.co/80x50?text=Yoga",
+    dep: "Thư giãn và cân bằng tâm trí",
   },
   {
     id: 3,
+    img: "https://img.freepik.com/free-psd/zumba-lifestyle-banner-template_23-2149193901.jpg",
     name: "Zumba",
-    description: "Lớp nhảy Zumba sôi động",
-    image: "https://placehold.co/80x50?text=Zumba",
+    dep: "Đốt cháy calories với những giai điệu nhảy sôi động",
   },
 ];
 
-// ===== LOCAL STORAGE =====
-const getServices = () => {
-  const data = localStorage.getItem("services");
-  if (!data) {
-    localStorage.setItem("services", JSON.stringify(DEFAULT_SERVICES));
-    return DEFAULT_SERVICES;
-  }
-  return JSON.parse(data);
-};
+let editId = null;
+let deleteId = null;
 
-const saveServices = (services) => {
+const saveData = () => {
   localStorage.setItem("services", JSON.stringify(services));
 };
 
-// ===== STATE =====
-let services = getServices();
-let editingId = null;
+const getData = () => {
+  let data = localStorage.getItem("services");
+  if (data) {
+    services = JSON.parse(data);
+  }
+};
 
-// ===== ELEMENT =====
-const modal = document.getElementById("modal");
-const modalTitle = document.getElementById("modalTitle");
-const nameInput = document.getElementById("name");
-const descInput = document.getElementById("desc");
-const imgInput = document.getElementById("img");
+let tbodyElement = document.getElementById("serviceList");
 
-const nameErr = document.getElementById("nameErr");
-const descErr = document.getElementById("descErr");
-const imgErr = document.getElementById("imgErr");
+const renderData = () => {
+  tbodyElement.innerHTML = "";
 
-const serviceList = document.getElementById("serviceList");
-const openAddBtn = document.getElementById("openAddBtn");
-const saveBtn = document.getElementById("saveBtn");
-const cancelBtn = document.getElementById("cancelBtn");
-
-// ===== RENDER =====
-const renderTable = () => {
-  serviceList.innerHTML = "";
-
-  services.forEach((s) => {
-    const tr = document.createElement("tr");
+  services.forEach((item) => {
+    let tr = document.createElement("tr");
 
     tr.innerHTML = `
-      <td>${s.name}</td>
-      <td>${s.description}</td>
-      <td><img src="'${s.image}'" alt="${s.name}" /></td>
+      <td>${item.name}</td>
+      <td>${item.dep}</td>
+      <td><img src="${item.img}"/></td>
       <td>
-        <button class="edit-btn" onclick="openEdit(${s.id})">Sửa</button>
-        <button class="delete-btn" onclick="deleteService(${s.id})">Xóa</button>
+        <button class = "edit-text" onclick="handleEdit(${item.id})">Sửa</button>
+        <button class = "delete-text"onclick="openDeleteModal(${item.id})">Xóa</button>
       </td>
     `;
 
-    serviceList.appendChild(tr);
+    tbodyElement.appendChild(tr);
   });
 };
 
-// ===== MODAL =====
-const openModal = () => modal.classList.add("active");
-const closeModal = () => modal.classList.remove("active");
+let inputName = document.getElementById("inputname");
+let inputDes = document.getElementById("inputdes");
+let inputImg = document.getElementById("inputimg");
 
-// ===== RESET =====
-const clearErrors = () => {
-  nameErr.textContent = "";
-  descErr.textContent = "";
-  imgErr.textContent = "";
+let validName = document.getElementById("validName");
+let validDes = document.getElementById("validDes");
+let validImg = document.getElementById("validImg");
+
+const modal = document.getElementById("modal");
+const openBtn = document.getElementById("openAddBtn");
+const cancelBtn = document.getElementById("cancelBtn");
+const saveBtn = document.getElementById("saveBtn");
+
+const deleteModal = document.getElementById("deleteModal");
+const confirmDeleteBtn = document.getElementById("confirmDelete");
+const cancelDeleteBtn = document.getElementById("cancelDelete");
+
+const resetValidation = () => {
+  validName.innerText = "";
+  validDes.innerText = "";
+  validImg.innerText = "";
 };
 
-const resetForm = () => {
-  nameInput.value = "";
-  descInput.value = "";
-  imgInput.value = "";
-  clearErrors();
-};
+const validateForm = () => {
+  let isValid = true;
+  resetValidation();
 
-// ===== VALIDATE =====
-const validate = () => {
-  let valid = true;
-  clearErrors();
-
-  if (!nameInput.value.trim()) {
-    nameErr.textContent = "Vui lòng nhập tên dịch vụ";
-    valid = false;
+  if (!inputName.value.trim()) {
+    validName.innerText = "Vui lòng nhập tên dịch vụ";
+    isValid = false;
   }
 
-  if (!descInput.value.trim()) {
-    descErr.textContent = "Vui lòng nhập mô tả";
-    valid = false;
+  if (!inputDes.value.trim()) {
+    validDes.innerText = "Vui lòng nhập mô tả";
+    isValid = false;
   }
 
-  if (!imgInput.value.trim()) {
-    imgErr.textContent = "Vui lòng nhập link ảnh";
-    valid = false;
+  if (!inputImg.value.trim()) {
+    validImg.innerText = "Vui lòng nhập hình ảnh";
+    isValid = false;
   }
 
-  return valid;
+  return isValid;
 };
 
-// ===== THÊM =====
-if (openAddBtn) {
-  openAddBtn.addEventListener("click", () => {
-    editingId = null;
-    modalTitle.textContent = "Thêm dịch vụ";
-    resetForm();
-    openModal();
-  });
-}
-
-// ===== SỬA =====
-window.openEdit = (id) => {
-  const s = services.find((x) => x.id === id);
-  if (!s) return;
-
-  editingId = id;
-  modalTitle.textContent = "Sửa dịch vụ";
-
-  nameInput.value = s.name;
-  descInput.value = s.description;
-  imgInput.value = s.image;
-
-  clearErrors();
-  openModal();
+openBtn.onclick = () => {
+  editId = null;
+  inputName.value = "";
+  inputDes.value = "";
+  inputImg.value = "";
+  resetValidation();
+  modal.style.display = "block";
 };
 
-// ===== XÓA =====
-window.deleteService = (id) => {
-  if (!confirm("Bạn có chắc muốn xóa không?")) return;
-
-  services = services.filter((s) => s.id !== id);
-  saveServices(services);
-  renderTable();
+cancelBtn.onclick = () => {
+  modal.style.display = "none";
+  editId = null;
+  resetValidation();
 };
 
-// ===== LƯU =====
-saveBtn.addEventListener("click", () => {
-  if (!validate()) return;
+const handleEdit = (id) => {
+  let item = services.find((item) => item.id === id);
 
-  if (editingId === null) {
-    const newId = services.length
-      ? Math.max(...services.map((s) => s.id)) + 1
-      : 1;
+  if (item) {
+    inputName.value = item.name;
+    inputDes.value = item.dep;
+    inputImg.value = item.img;
+    editId = id;
+    modal.style.display = "block";
+  }
+};
 
-    services.push({
-      id: newId,
-      name: nameInput.value.trim(),
-      description: descInput.value.trim(),
-      image: imgInput.value.trim(),
-    });
+const addService = () => {
+  let newItem = {
+    id: Date.now(),
+    name: inputName.value.trim(),
+    dep: inputDes.value.trim(),
+    img: inputImg.value.trim(),
+  };
+  services.push(newItem);
+};
+
+const updateService = () => {
+  let item = services.find((item) => item.id === editId);
+
+  if (item) {
+    item.name = inputName.value.trim();
+    item.dep = inputDes.value.trim();
+    item.img = inputImg.value.trim();
+  }
+};
+
+const handleSubmit = () => {
+  if (!validateForm()) return;
+
+  if (editId) {
+    updateService();
+    editId = null;
   } else {
-    const idx = services.findIndex((s) => s.id === editingId);
-
-    if (idx !== -1) {
-      services[idx] = {
-        id: editingId,
-        name: nameInput.value.trim(),
-        description: descInput.value.trim(),
-        image: imgInput.value.trim(),
-      };
-    }
+    addService();
   }
 
-  saveServices(services);
-  closeModal();
-  renderTable();
-});
+  saveData();
+  renderData();
 
-// ===== HỦY =====
-cancelBtn.addEventListener("click", closeModal);
+  modal.style.display = "none";
 
-// ===== CLICK NGOÀI =====
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) closeModal();
-});
+  inputName.value = "";
+  inputDes.value = "";
+  inputImg.value = "";
+};
 
-// ===== INIT =====
-renderTable();
+saveBtn.addEventListener("click", handleSubmit);
+
+const openDeleteModal = (id) => {
+  deleteId = id;
+  deleteModal.style.display = "block";
+};
+
+cancelDeleteBtn.onclick = () => {
+  deleteModal.style.display = "none";
+  deleteId = null;
+};
+
+confirmDeleteBtn.onclick = () => {
+  services = services.filter((item) => item.id !== deleteId);
+
+  saveData();
+  renderData();
+
+  deleteModal.style.display = "none";
+  deleteId = null;
+};
+
+getData();
+renderData();

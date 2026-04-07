@@ -40,7 +40,7 @@
           <div class="listfilter">
             <div>
               <label for="">Lớp học</label><br />
-              <select name="" id="">
+              <select name="" id="filterClass">
                 <option value="">Tất cả</option>
                 <option value="Gym">Gym</option>
                 <option value="Yoga">Yoga</option>
@@ -49,11 +49,11 @@
             </div>
             <div>
               <label for="">Email</label><br />
-              <input type="email" />
+              <input type="email" id="filterEmail" />
             </div>
             <div>
               <label for="">Ngày</label><br />
-              <input type="date" />
+              <input type="date" id="filterDate" />
             </div>
           </div>
         </div>
@@ -74,5 +74,53 @@
         </div>
       </div>
     </div>
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Popup Thêm/Sửa -->
+    <div id="popupForm" class="popup">
+      <h3 id="modalTitle">Đặt lịch</h3>
+      <div class="form-group">
+        <label>Lớp học</label>
+        <select id="classInput" class="form-control">
+          <option value="">Chọn lớp học</option>
+          <option value="Gym">Gym</option>
+          <option value="Yoga">Yoga</option>
+          <option value="Zumba">Zumba</option>
+        </select>
+        <small id="valid-class" style="color: red"></small>
+      </div>
+      <div class="form-group">
+        <label>Ngày tập</label>
+        <input type="date" id="dateInput" class="form-control" />
+        <small id="valid-date" style="color: red"></small>
+      </div>
+      <div class="form-group">
+        <label>Khung giờ</label>
+        <select id="timeInput" class="form-control">
+          <option value="">Chọn khung giờ</option>
+          <option value="07:00 - 09:00">07:00 - 09:00</option>
+          <option value="09:00 - 11:00">09:00 - 11:00</option>
+          <option value="13:00 - 15:00">13:00 - 15:00</option>
+          <option value="15:00 - 17:00">15:00 - 17:00</option>
+        </select>
+        <small id="valid-time" style="color: red"></small>
+      </div>
+      <div class="popup-actions">
+        <button id="btnCancel" class="btncan">Hủy</button>
+        <button id="btnSave" class="btnad">Lưu</button>
+      </div>
+    </div>
+
+    <!-- Popup Xóa -->
+    <div id="popupDelete" class="popup delete-popup">
+      <h3>Xác nhận xóa</h3>
+      <p>Bạn có chắc chắn muốn xóa lịch này không?</p>
+      <div class="popup-actions">
+        <button id="btnCancelDelete" class="btncan">Hủy</button>
+        <button id="btnConfirmDelete" class="btndel">Xóa</button>
+      </div>
+    </div>
+    <script src="./adminthongke.js"></script>
   </body>
 </html>

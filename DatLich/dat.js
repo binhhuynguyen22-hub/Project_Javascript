@@ -2,7 +2,7 @@ if (!localStorage.getItem("schedule")) {
   const sampleSchedule = [
     {
       id: "1",
-      userId: "1",
+      userId: "Id1",
       class: "Gym",
       date: "2026-04-03",
       time: "07:00 - 09:00",
@@ -100,7 +100,33 @@ const validateForm = () => {
 
   return isValid;
 };
+let listData = [
+  {id: 1, img:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTxCrU9lz8HbpcdoAs7wh8hIMHlJBPkVcqG5iBIsNw9NTeIn1kN", name :"Gym", dep:"Tập luyện với thiết bị hiện đại"},
+  {id: 2, img:"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRvtZOaqAl_xZR09727KWEkuBQIGxzl49HuYj30eaObfHaRGEtp", name :"Yoga", dep:"Thư giãn và cân bằng tâm trí"},
+  {id: 3, img:"https://img.freepik.com/free-psd/zumba-lifestyle-banner-template_23-2149193901.jpg?semt=ais_incoming&w=740&q=80", name :"Zumba", dep:"Đốt cháy calories với những giai điệu nhảy sôi động"},
+];
+const getDataSe = () =>{
+  let data = localStorage.getItem("services");
 
+  if(data){
+    listData = JSON.parse(data);
+  }
+}
+const addClassToSelect = () =>{
+  getDataSe();
+  classInput.innerHTML = `<option value="">Chọn lớp học</option>`;
+
+  listData.forEach((item)=>{
+    let optionElement = document.createElement("option");
+
+    optionElement.innerHTML=`
+      <option value = "${item.name}">${item.name}</option>
+    `;
+
+    classInput.appendChild(optionElement);
+  });
+}
+addClassToSelect();
 // hienthi
 const renderData = () => {
   tbody.innerHTML = "";

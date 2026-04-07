@@ -36,7 +36,7 @@ body {
 }
 
 .list-link a {
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
   padding: 10px 12px;
   border-radius: 6px;
@@ -47,9 +47,9 @@ body {
   background-color: #f3f4f6;
   padding: 20px;
 }
-.table-container{
-    font-weight: 600;
-    font-size: 18.9px;
+.table-container {
+  font-weight: 600;
+  font-size: 18.9px;
 }
 /* Top bar */
 .box1 {
@@ -95,7 +95,8 @@ thead {
   background-color: #e5e7eb;
 }
 
-th, td {
+th,
+td {
   padding: 14px 16px;
   text-align: left;
 }
@@ -110,9 +111,9 @@ td {
 }
 
 /* Hover */
-tbody tr:hover {
+/* tbody tr:hover {
   background-color: #f3f4f6;
-}
+} */
 
 /* Image */
 td img {
@@ -142,42 +143,147 @@ td img {
   cursor: pointer;
 }
 
-/* Modal */
+/* Modal nền */
 .modal {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: none;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 250px;
 }
 
+/* Box popup */
 .modal-content {
-  background: white;
-  padding: 20px;
-  width: 300px;
-  border-radius: 8px;
+  background: #f3f3f3;
+  padding: 24px;
+  border-radius: 12px;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
+/* Input + textarea */
 .modal-content input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
   width: 100%;
-  padding: 8px;
+}
+
+/* Buttons */
+.modal-action {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
   margin-top: 10px;
 }
 
-.modal-action {
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
+/* Button style */
+#cancelBtn {
+  background: #6b7280;
+  color: white;
 }
 
-.error {
-  color: red;
-  font-size: 12px;
+#saveBtn {
+  background: #3b82f6;
+  color: white;
 }
-.modal.active {
-  display: flex;
+.modal-content textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 50px;
+}
+.listButton{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.canBtn{
+    width: 80px;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6d727f;
+    color: #fff;
+}
+.saveBtn{
+    width: 80px;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    background-color: #5b84ee;
+    color: #fff;
+}
+.text{
+    height: 120px;
+}
+#deleteModal .modal-content {
+  width: 300px;
+  padding: 16px;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+#deleteModal h3 {
+  font-size: 18px;
+}
+
+#deleteModal p {
+  font-size: 14px;
+  margin: 8px 0 16px;
+}
+
+#deleteModal .listButton {
+  justify-content: center;
+  gap: 12px;
+}
+
+#deleteModal .canBtn,
+#deleteModal .saveBtn {
+  width: 70px;
+  height: 35px;
+  font-size: 13px;
+}
+#deleteModal .modal-content {
+  width: 300px;
+  padding: 16px;
+  border-radius: 10px;
+
+  height: auto;        /* 🔥 QUAN TRỌNG */
+  min-height: unset;   /* nếu có */
+}
+
+#deleteModal p {
+  margin: 6px 0 12px;
+}
+
+#deleteModal .listButton {
+  margin-top: 5px;
+}
+.edit-text {
+  color: #2563eb;
+  cursor: pointer;
+  margin-right: 10px;
+  border: none;
+  background-color: #f9fafb;
+}
+
+.delete-text {
+  color: #dc2626;
+  cursor: pointer;
+  border: none;
+  background-color: #f9fafb;
 }
